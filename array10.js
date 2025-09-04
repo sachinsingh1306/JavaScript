@@ -1,8 +1,8 @@
 /**
- * Array........
- */
-const myArr = [0, 1, 2, 3, 4, 5, "sachin"]
-const myHeros = ["ironman","naagraj","marvel"]
+//  * Array........
+//  */
+// const myArr = [0, 1, 2, 3, 4, 5, "sachin"]
+// const myHeros = ["ironman","naagraj","marvel"]
 
 // console.log(myArr[5]);
 
@@ -46,10 +46,10 @@ const myHeros = ["ironman","naagraj","marvel"]
 /**
  * Array Function
  *  
- */
+//  */
 
-const marvel_heros = ["thor", "ironman", "spiderman"]
-const dc_heros = ["superman", "flash", "batman"]
+// const marvel_heros = ["thor", "ironman", "spiderman"]
+// const dc_heros = ["superman", "flash", "batman"]
 
 // marvel_heros.push(dc_heros)
 
@@ -65,11 +65,65 @@ const dc_heros = ["superman", "flash", "batman"]
 // console.log(all_new_heros);
 
 
-const another_arrray = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4,8]] ]
-console.log(another_arrray);
+// const another_arrray = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4,8]] ]
+// console.log(another_arrray);
 
-const real_another_array = another_arrray.flat(Infinity)
-console.log(real_another_array);;
+// const real_another_array = another_arrray.flat(Infinity)
+// console.log(real_another_array);;
+
+
+// map************************************
+
+// const myNums = [1,2,3,4,5,6,7,8,9,10]
+
+// // const newNums = myNums.filter( (num) => num > 4)
+
+// const newNums = myNums.filter((num) => {
+// return num > 4
+// })
+// console.log(newNums);
+
+// const myNumers = [1,2,3,4,5,6,7,8,9,10]
+
+// const newNums = myNumers.map((num) => num * 10)
+// .map((num) => num + 1)
+// .filter((num) => num >= 20)
+// console.log(newNums);
+
+/***
+ * reduce 
+ */
+
+const shoppingCart =[
+    {
+    itemName : "js course",
+    price : 2999
+},
+{
+    itemName : "py course",
+    price : 3999
+},
+{
+    itemName : "java course",
+    price : 2599
+},
+{
+    itemName : "data Science",
+    price : 3399
+},
+{
+    itemName : "MERN",
+    price : 1299
+}
+]
+
+const priceToPay = shoppingCart.reduce((acc, item) => acc + item. price, 0)
+
+console.log(priceToPay);
+
+
+
+
 
 
 
