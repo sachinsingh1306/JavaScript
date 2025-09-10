@@ -1,5 +1,6 @@
 Question 1.
 To take input inside the website-----------
+
 let age = Number(prompt("What is your age ?"));
 
 if(isNaN(age)){
