@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="conditiondsa.js"></script>
+  <meta charset="UTF-8">
+  <title>Sandwich with Callback & setTimeout</title>
 </head>
 <body>
-    
+  <h2>Making Sandwich...</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // Function to log steps
+    const logStep = step => {
+      output.textContent += step + "\n";
+    };
+
+    // Sandwich making process with callbacks
+    function makeSandwich(callback) {
+      setTimeout(() => {
+        logStep("1. Getting bread 🍞...");
+        setTimeout(() => {
+          logStep("2. Adding butter 🧈...");
+          setTimeout(() => {
+            logStep("3. Adding vegetables 🥒🥕...");
+            setTimeout(() => {
+              logStep("4. Closing the sandwich 🥪...");
+              setTimeout(() => {
+                logStep("✅ Sandwich is ready!");
+                callback(); // call the callback after finishing
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }
+
+    // Call the sandwich maker
+    makeSandwich(() => {
+      logStep("🎉 Enjoy your sandwich!");
+    });
+  </script>
 </body>
 </html>
