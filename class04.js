@@ -74,9 +74,3 @@ console.table({status, city, isEmployed});
 
 // let num = sum(2,3,5,3,8,9,7);
 // console.log(num);
-
-
-
-
-
-
