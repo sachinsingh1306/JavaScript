@@ -227,5 +227,17 @@
 
 //-------------------------------------------------------------------|
 
+/**
+ * copying an array --> array reference
+ */
 
+let arr1 = [1, 2,3];
+let arr2 = arr1;
+
+console.log("Arr1 - ", arr1);
+console.log("Arr2 - ", arr2);
+
+arr2.push(4);
+console.log("updated value of Arr1 -", arr1);
+console.log("updated value of Arr2 -", arr2);
 

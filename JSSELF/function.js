@@ -216,3 +216,6 @@ let factorial = arr.reduce((result , current) =>{
 });
 
 console.log(factorial);
+
+//--------------------------------------------------------------------|
+
