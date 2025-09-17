@@ -318,25 +318,25 @@
 const user1 = {
   name: "Sachin",
   age: 24,
-//   sayHi() {
-//     console.log(this.name);
-//   },
+  sayHi() {
+    console.log(this.name);
+  },
 };
 
 const user2 = {
   name: "Alok",
   age: 20,
-//   sayHi() {
-//     console.log(this.name);
-//   },
+  sayHi() {
+    console.log(this.name);
+  },
 };
 
 const user3 = {
   name: "Riya",
   age: 34,
-//   sayHi() {
-//     console.log(this.name);
-//   },
+  sayHi() {
+    console.log(this.name);
+  },
 };
 
 const user4 = {
@@ -348,8 +348,13 @@ function sayHi(degree, year) {
     console.log(this.name, degree, year);
   };
 
-//   user1.sayHi();
+  user1.sayHi();
 sayHi.call(user2);
 
 sayHi.call(user1, "B.Tech", 2015);
 
+
+sayHi.apply(user1, ["B.Tech - IT"]);
+
+const result = sayHi.bind(user3 ,"B.Tech - CS");
+result(2022);
