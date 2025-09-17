@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>THis is targeted by its TagName</h1>
+    <h1 class="heading-1">This is heading1 by its class</h1>
+    <h1 id="heading-id">This is by Heading1 by its Id</h1>
+    <h2 class="heading-1">This is heading 1 by its class</h2>
+    <h3 id="heading-id">This is by its Id</h3>
+
+    <script>
+        // const res = document.getElementsByTagName("h1");
+
+        // const res = document.getElementsByClassName("heading-1");
+
+        // const res = document.getElementById("heading-id");
+
+        // const res = document.querySelector(".heading-1");
+
+        // const res = document.querySelectorAll(".heading-1");
+
+        // console.log(res);
+
+
+        //---------creation of element or node--------------
+
+        const para = document.createElement("p");
+        para.innerText = "this is a injected by js";
+        para.classList.add("para");
+        document.body.appendChild(para);
+        console.log(para);
+
+
+
+
+    </script>
+</body>
+
+</html>
