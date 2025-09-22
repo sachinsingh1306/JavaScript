@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML_EVENTS</title>
+  </head>
+  <body>
+    <h2>Amazing Images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photshop"
+            src="https://images.pexels.com/photos/2266350/pexels-photo-2266350.jpeg"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/3943933/pexels-photo-3943933.jpeg"
+            alt=""
+          />
+        </li>
+        <li><a href="https://www.google.com/" id="google">Google</a></li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // const owl = document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked");
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+    //   type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("Click inside th ul");
+    //   },
+    //   false
+    // );
+
+    //  document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     console.log("Click inside th ul");
+    //     event.stopPropagation();
+    //   },
+    //   false
+    // );
+
+    // document.getElementById('google').addEventListener('click',function(event){
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     console.log('google Clicked');
+        
+    // },false);
+
+    document.querySelector("#images").addEventListener('click', function(event){
+        console.log(event.target.parentNode);
+        let removeIt = event.target.parentNode
+        // removeIt.remove()
+
+        removeIt.parentNode.removeChild(removeIt); 
+        })
+
+  </script>
+</html>
