@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BG-Color-Switcher</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        transition: background-color 0.5s ease;
+      }
+      .nav {
+        width: 100vw;
+        height: 10vh;
+        background-color: #111;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #555, #999);
+        padding: 10px 18px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      .nav a:hover {
+        background: linear-gradient(135deg, #999, #555);
+        transform: scale(1.05);
+      }
+      .canvas {
+        text-align: center;
+        margin-top: 60px;
+      }
+      .canvas h1 {
+        font-size: 40px;
+        margin-bottom: 25px;
+        color: #222;
+      }
+      .btn {
+        margin: 10px;
+        padding: 12px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      #gray {
+        background-color: gray;
+        color: white;
+      }
+      #red {
+        background-color: crimson;
+        color: white;
+      }
+      #blue {
+        background-color: royalblue;
+        color: white;
+      }
+      #orange {
+        background-color: darkorange;
+        color: white;
+      }
+      .btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      h2 {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 24px;
+        color: #444;
+      }
+      #clear {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="#">You Tube</a>
+    </div>
+
+    <div class="canvas">
+      <h1>Color Bg. Switcher</h1>
+      <button class="btn" id="gray">Gray</button>
+      <button class="btn" id="red">Red</button>
+      <button class="btn" id="blue">Blue</button>
+      <button class="btn" id="orange">Orange</button>
+      <button class="btn" id="clear">Reset</button>
+    </div>
+
+    <h2>Click to change the Background Color which You want !!</h2>
+
+    <script>
+      const buttons = document.querySelectorAll(".btn");
+      const body = document.querySelector("body");
+      const clear = document.querySelector("#clear");
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          if (event.target.id === "gray") {
+            clear.style.display = "inline";
+            body.style.backgroundColor = event.target.id;
+          }
+          if (event.target.id === "red") {
+            clear.style.display = "inline";
+            body.style.backgroundColor = event.target.id;
+          }
+          if (event.target.id === "blue") {
+            clear.style.display = "inline";
+            body.style.backgroundColor = event.target.id;
+          }
+          if (event.target.id === "orange") {
+            clear.style.display = "inline";
+            body.style.backgroundColor = event.target.id;
+          }
+          if (event.target.id === "clear") {
+            clear.style.display = "none";
+            body.style.backgroundColor = "white";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
