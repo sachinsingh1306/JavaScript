@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Hub Finder</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+      }
+      .searchInput {
+        margin: 20px 0;
+      }
+      input {
+        padding: 8px;
+        width: 250px;
+      }
+      button {
+        padding: 8px 15px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      .output {
+        margin-top: 20px;
+        display: none;
+      }
+      .output img {
+        max-width: 200px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Movie Hub Finder</h1>
+      <div class="searchInput">
+        <input
+          type="text"
+          id="movieName"
+          placeholder="Enter a Movie's Name...."
+        />
+        <button onclick="fetchData()">Search</button>
+      </div>
+      <div class="output"></div>
+    </div>
+    <script>
+      async function fetchData() {
+        const movieName = document.getElementById("movieName").value.trim();
+        const output = document.querySelector(".output");
+
+        if (!movieName) {
+          alert("Please Enter a Movie Name....");
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `https://api.tvmaze.com/search/shows?q=${movieName}`
+          );
+
+          if (!res.ok) {
+            throw new Error("Movie Not Found");
+          }
+
+          const data = await res.json();
+
+          if (data.length === 0) {
+            throw new Error("No results found");
+          }
+
+          const show = data[0].show; // take the first result
+          
+          output.style.display = "block";
+          output.innerHTML = `
+              <img src="${
+                show.image
+                  ? show.image.medium
+                  : "https://via.placeholder.com/180x270?text=No+Image"
+              }" alt="${show.name}">
+              <h2>${show.name}</h2>
+              <p>${
+                show.premiered
+                  ? "Year: " + show.premiered.slice(0, 4)
+                  : "Year: N/A"
+              }</p>
+              <p>Type: ${show.type}</p>
+            `;
+        } catch (error) {
+          output.style.display = "block";
+          output.innerHTML = `<p style="color:red;">${error.message}</p>`;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,35 +1,51 @@
-// const p1 = Promise.resolve("Sachin");
+// const response = fetch("https://jsonplaceholder.typicode.com/todos/1");
+// // console.log(response);
+// response
+//   .then((res) => {
+//     const data = res.json();
+//     return data;
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   })
+//   .finally(() => {
+//     console.log("promises completed");
+//   });
+
+// const p1 = Promise.reject("404 not found");
 // p1.then((res) => {
 //   console.log(res);
+// }).catch((err) => {
+//   console.log(err);
 // });
 
+//promises method...
+// const p1 = Promise.reject("404 not found");
+// const p2 = Promise.resolve("success");
+// const P3 = Promise.reject("success 2");
 
-//------------------------------------------------------------
+// Promise.any([p1, p2, P3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-// const a1 = Promise.reject("404 not Found !");
+async function getData() {
+  try {
+    const res = await fetch("https://api.github.com/users/vikasthakurr");
 
-// const a2 = Promise.resolve("Success");
-
-// const a3 = Promise.resolve("Succes Last");
-
-// Promise.allSettled([a1, a2, a3])
-
-// .then((result) =>{
-//     console.log(result);
-// })
-// .catch((error) =>{
-//     console.log(Error);
-// });
-
-//------------------------------------------------------------
-
-const a1 =  Promise.resolve("Task 1 completed");
-const a2 =  Promise.resolve("Task 2 completed");
-const a3 = Promise.reject("Task 3 failed");
-
-Promise.all([a1, a2, a3 ])
-
-    .then((results) => console.log(results))
-    .catch((error) => console.error(error));
-
-    
+    if (!res.ok) {
+      throw new Error("something went wrong");
+    }
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+getData();
