@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Time Clock</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #74ebd5, #acb6e5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .main {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px 60px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+
+      #banner {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      #clock {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #222;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="banner">Your Local Time</div>
+      <div id="clock"></div>
+    </div>
+
+    <script>
+        const clock  = document.querySelector('#clock');
+
+        setInterval(function () {
+            let date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+        },1000);
+    </script>
+  </body>
+</html>
