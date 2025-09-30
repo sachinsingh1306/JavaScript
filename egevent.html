@@ -1,0 +1,91 @@
+<!-- Example 01
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="fun(this)">Show</button>
+
+    <script>
+      let show = document.getElementsByTagName("button")[0];
+
+      function fun() {
+        if (show.innerHTML === "Show") {
+          show.innerHTML = "Hide";
+        } else {
+          show.innerHTML = "Show";
+        }
+      }
+    </script>
+  </body>
+</html> -->
+
+
+
+<!--Example 02
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>P Tag 1</p>
+    <p>P Tag 2</p>
+    <p>P Tag 3</p>
+    <button onclick="fun(this)">Hide</button>
+
+    <script>
+        let show = document.getElementsByTagName('p');
+
+        function fun(btn){
+            if(btn.innerHTML === "Show"){
+
+                // Show all <p> tags
+                for(let i = 0; i < show.length; i++){
+                    show[i].style.display = "block";
+                }
+                btn.innerHTML = "Hide";
+            } else {
+                
+                // Hide all <p> tags
+                for(let i = 0; i < show.length; i++){
+                    show[i].style.display = "none";
+                }
+                btn.innerHTML = "Show";
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p onclick="fun(this)">P Tag 1</p>
+    <div onclick="fun(this)">Div Tag 1</div>
+    <section onclick="fun(this)">Section Doc-1 </section>
+    <p onclick="fun(this)">P Tag - 2</p>
+    <div onclick="fun(this)">
+        <p>P in Div 2</p>
+    </div>
+
+    <script>
+      function fun(e){
+          e.style.display = "none";
+      }
+    </script>
+</body>
+</html>
