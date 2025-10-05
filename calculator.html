@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <input type="text" />
+    <button onclick="opr('+')">+</button>
+    <button onclick="opr('-')">-</button>
+    <button onclick="opr('*')">*</button>
+    <button onclick="opr('/')">/</button>
+    <button onclick="opr('%')">%</button>
+    <button onclick="opr('**')">**</button>
+    <span></span>
+
+    <script>
+      function opr(event) {
+        let r;
+        let userInput = document.getElementsByTagName("input");
+        let a = parseInt(userInput[0].value);
+        let b = parseInt(userInput[1].value);
+
+        // let a = tfr[0].value;
+        // let b = tfr[1].value
+
+        switch (event) {
+          case "+":
+            r = a + b;
+            break;
+          case "-":
+            r = a - b;
+            break;
+          case "*":
+            r = a * b;
+            break;
+          case "/":
+            r = a / b;
+            break;
+          case "%":
+            r = a % b;
+            break;
+          case "**":
+            r = a ** b;
+            break;
+        }
+
+        document.getElementsByTagName("span")[0].innerHTML = r;
+
+        tfr[0].value = "";
+        tfr[1].value = "";
+      }
+    </script>
+  </body>
+</html>
