@@ -33,7 +33,6 @@
 //   return reversedStr;
 // }
 
-
 // const result = getReversedStr(str);
 
 // if (result === str) {
@@ -48,18 +47,63 @@
 
 //---WAP to delete all the vowels from a string.-------------
 
-const string = "The quick brown fox jumps over the lazy dog";
+// const string = "The quick brown fox jumps over the lazy dog";
+// function getStrWithVowels(str){
+//     const vowels = ["a", "e", "i", "o", "u" ];
+//     let result = "";
+//     for(let char of str){
+//         if(!vowels.includes(char.toLowerCase())){
+//             result += char;
+//         }
+//     }
+//     return result;
+// }
+// const updatedStr = getStrWithVowels(string);
+// console.log(updatedStr);
 
-function getStrWithVowels(str){
-    const vowels = ["a", "e", "i", "o", "u" ];
-    let result = "";
-    for(let char of str){
-        if(!vowels.includes(char.toLowerCase())){
-            result += char;
-        }
-    }
-    return result;
+//==================================================================//
+
+// const string = "The quick brown fox jumps over the lazy dog";
+
+// function getVowelsFromString(str) {
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   let result = "";
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i].toLowerCase())) {
+//       result += str[i];
+//     }
+//   }
+
+//   return result;
+// }
+
+// const result = getVowelsFromString(string);
+// const newResult = string.length - result.length;
+
+// console.log(result);
+// console.log(result.length);
+
+// console.log(newResult);
+
+//=====================================================================//
+
+//------MASK THE LAST 4 CHAR---------//
+
+// const str = "12345678901234566789";
+
+// const maskChar = "#".repeat(4);
+// const result = str.slice(0, str.length - 4) + maskChar;
+// console.log(result);
+
+//=================================================================//
+
+//---ENCODED Character---------------------
+
+const inputStr = "sachinsingh";
+
+const getEncodedStr = str => {
+    let encodedStr = "";
+    let currentPos = 0;
+    
 }
-const updatedStr = getStrWithVowels(string);
-console.log(updatedStr);
-
