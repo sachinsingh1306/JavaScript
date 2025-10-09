@@ -1,24 +1,23 @@
-import { log } from "console";
 import fs, { writeFile } from "fs";
 
-// Write file operation..
-// fs.writeFileSync("sachin.text", "Hello Sachin");
-// fs.writeFileSync("sachin.pdf", "Hello Sachin");
+//write file operation...
+// fs.writeFileSync("vikas.pdf", "hello world");
+// fs.writeFileSync("vikas.pdf", "hello vikas kumar");
 
-//read operation....
-// const data = fs.readFileSync("sachin.text", "utf-8");
+// fs.appendFileSync("vikas.pdf", " \n how are you?");
+
+//read operation...
+// const data = fs.readFileSync("vikas.pdf", "utf-8");
 // console.log(data);
 
-// fs.appendFileSync("sachin.text", "\nHello world !!!");
+// fs.unlinkSync("vikas.pdf");
 
-//delete file-------------
-// fs.unlinkSync("sachin.text");
+//async operation...
 
-// Async Operation-------------
-writeFile("abc.pdf", "I am Hello World !!!", (error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("File Created");
-  }
-});
+fs.writeFile("abc.pdf", "hello vikas", (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("file created");
+    }
+  });
